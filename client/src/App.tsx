@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Dashboard } from "./pages/dashboard";
 import { Auth } from "./pages/auth";
 import { FinancialRecordsProvider } from "./contexts/financial-record-context";
-import { SignedIn, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 // import { dark } from "@clerk/themes";
 
 function App() {
@@ -15,6 +15,9 @@ function App() {
           <SignedIn>
             <UserButton />
           </SignedIn>
+          <SignedOut>
+            <Link to="/auth"> Go to login</Link>
+          </SignedOut>
         </div>
         <Routes>
           <Route
